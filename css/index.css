@@ -1235,10 +1235,18 @@ body {
 }
 
 .gift-reveal-title {
-    font-family: var(--font-head);
-    font-size: clamp(1.3rem, 4vw, 1.8rem);
-    color: var(--quartz-pink);
-    margin-bottom: 1.2rem;
+    text-align: center;
+    line-height: 1.7;
+}
+
+.gift-reveal-title span {
+    display: block;
+    margin-top: 16px;
+}
+
+.gift-reveal-title strong {
+    display: block;
+    margin-top: 18px;
 }
 
 /* 3D Tilt Card Frame */
