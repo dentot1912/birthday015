@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ada pesan spesial nih. mau tahu apa? ayo tekan!">
+    <title>Birthday My Favorite Girl 🎀</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,700;1,400&family=Quicksand:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/index.css?v=2.0">
+</head>
+
+<body>
+
+    <!-- Floating Canvas Particles -->
+    <canvas id="canvas-sparks" aria-hidden="true"></canvas>
+
+    <!-- Progress Navigation Dots -->
+    <nav class="progress-nav" aria-label="Page progress">
+        <span class="dot active" data-section="0"></span>
+        <span class="dot" data-section="1"></span>
+        <span class="dot" data-section="2"></span>
+        <span class="dot" data-section="3"></span>
+        <span class="dot" data-section="4"></span>
+        <span class="dot" data-section="5"></span>
+    </nav>
+
+    <main class="app-container" id="app">
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- SECTION 1: ENVELOPE INVITATION (INTRO)     -->
+        <!-- ═══════════════════════════════════════════ -->
+        <section id="section-intro" class="section active" data-index="0">
+            <div class="envelope-scene" id="envelope-scene">
+                <div class="envelope" id="envelope">
+                    <!-- Envelope Flap (Top) -->
+                    <div class="envelope-flap" id="envelope-flap"></div>
+
+                    <!-- Envelope Back/Inside -->
+                    <div class="envelope-back"></div>
+
+                    <!-- Envelope Letter (Slides out) -->
+                    <div class="envelope-letter" id="envelope-letter"
+                        style="opacity: 0; visibility: hidden; transform: translateY(40px) translateZ(2px); display: none;">
+                        <div class="kitty-ears" aria-hidden="true">
+                            <div class="ear ear--left"></div>
+                            <div class="ear ear--right"></div>
+                        </div>
+                        <div class="kitty-avatar">
+                            <img src="https://usagif.com/wp-content/uploads/gify/hello-kitty-sticker-9.gif"
+                                alt="Hello Kitty waving" width="100" height="100">
+                        </div>
+                        <h1 class="intro-title">Happy Birthday!<br><em>My Favorite Girl</em></h1>
+                        <p class="intro-sub">Ada pesan spesial nih. mau tahu apa? ayo tekan tanda panahnya!</p>
+                        <button id="btn-open-intro" class="btn-primary" aria-label="Open birthday surprise">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Envelope Front Left & Right Pockets -->
+                    <div class="envelope-front"></div>
+
+                    <!-- Wax Seal Stamp -->
+                    <div class="envelope-seal" id="envelope-seal" role="button" aria-label="Crack open wax seal"
+                        tabindex="0">
+                        <div class="seal-stamp">🎀</div>
+                    </div>
+                </div>
+                <p class="envelope-hint" id="envelope-hint">Ketuk pita untuk membukanya... ✨</p>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- SECTION 2: DIARY                           -->
+        <!-- ═══════════════════════════════════════════ -->
+        <section id="section-diary" class="section" data-index="1">
+            <h2 class="section-title">My Secret Diary</h2>
+            <p class="section-subtitle">Rahasia sih ... tapi khusus untuk kamu, kamu boleh baca! ^^</p>
+
+            <div class="diary-scene" id="diary-scene" role="button" aria-label="Open secret diary" tabindex="0">
+                <div class="diary" id="diary">
+                    <!-- 3D Book Cover -->
+                    <div class="diary-face diary-cover">
+                        <div class="diary-spine"></div>
+                        <div class="diary-cover-pattern"></div>
+                        <div class="diary-cover-content">
+                            <div class="diary-gold-lace"></div>
+
+                            <!-- Moon & Constellation Decoration -->
+                            <div class="diary-constellation" aria-hidden="true">
+                                <svg width="110" height="72" viewBox="0 0 110 72" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Glowing halo -->
+                                    <circle cx="55" cy="36" r="26" fill="rgba(255,215,0,0.07)" />
+                                    <!-- Crescent moon -->
+                                    <path
+                                        d="M55 14 C70 14 81 24 81 36 C81 48 70 58 55 58 C64 53 69 45 69 36 C69 27 64 19 55 14Z"
+                                        fill="#ffd700" opacity="0.92" />
+                                    <!-- Tiny star dots scattered -->
+                                    <circle cx="14" cy="14" r="2.2" fill="white" opacity="0.75" />
+                                    <circle cx="92" cy="20" r="1.8" fill="#ffd700" opacity="0.8" />
+                                    <circle cx="10" cy="50" r="1.5" fill="white" opacity="0.55" />
+                                    <circle cx="96" cy="54" r="2" fill="white" opacity="0.65" />
+                                    <circle cx="25" cy="62" r="1.2" fill="#ffd700" opacity="0.6" />
+                                    <circle cx="84" cy="8" r="1.2" fill="white" opacity="0.7" />
+                                    <!-- Sparkle crosses -->
+                                    <line x1="14" y1="11" x2="14" y2="17" stroke="white" stroke-width="0.9"
+                                        opacity="0.6" />
+                                    <line x1="11" y1="14" x2="17" y2="14" stroke="white" stroke-width="0.9"
+                                        opacity="0.6" />
+                                    <line x1="92" y1="17" x2="92" y2="23" stroke="#ffd700" stroke-width="0.9"
+                                        opacity="0.7" />
+                                    <line x1="89" y1="20" x2="95" y2="20" stroke="#ffd700" stroke-width="0.9"
+                                        opacity="0.7" />
+                                    <!-- Constellation connecting lines -->
+                                    <line x1="14" y1="14" x2="92" y2="20" stroke="rgba(255,215,0,0.18)"
+                                        stroke-width="0.7" stroke-dasharray="3 4" />
+                                    <line x1="10" y1="50" x2="25" y2="62" stroke="rgba(255,255,255,0.15)"
+                                        stroke-width="0.7" stroke-dasharray="3 4" />
+                                </svg>
+                            </div>
+
+                            <!-- Ornamental divider top -->
+                            <div class="diary-ornament" aria-hidden="true">
+                                <svg width="140" height="14" viewBox="0 0 140 14" fill="none">
+                                    <line x1="0" y1="7" x2="52" y2="7" stroke="#ffd700" stroke-width="0.9"
+                                        opacity="0.45" />
+                                    <circle cx="58" cy="7" r="2" fill="#ffd700" opacity="0.6" />
+                                    <circle cx="70" cy="7" r="3.8" fill="#ffd700" opacity="0.95" />
+                                    <circle cx="82" cy="7" r="2" fill="#ffd700" opacity="0.6" />
+                                    <line x1="88" y1="7" x2="140" y2="7" stroke="#ffd700" stroke-width="0.9"
+                                        opacity="0.45" />
+                                </svg>
+                            </div>
+
+                            <p class="diary-cover-label">My Secret Diary</p>
+
+                            <!-- Ornamental divider bottom -->
+                            <div class="diary-ornament" aria-hidden="true">
+                                <svg width="140" height="14" viewBox="0 0 140 14" fill="none">
+                                    <line x1="0" y1="7" x2="52" y2="7" stroke="#ffd700" stroke-width="0.9"
+                                        opacity="0.45" />
+                                    <circle cx="58" cy="7" r="2" fill="#ffd700" opacity="0.6" />
+                                    <circle cx="70" cy="7" r="3.8" fill="#ffd700" opacity="0.95" />
+                                    <circle cx="82" cy="7" r="2" fill="#ffd700" opacity="0.6" />
+                                    <line x1="88" y1="7" x2="140" y2="7" stroke="#ffd700" stroke-width="0.9"
+                                        opacity="0.45" />
+                                </svg>
+                            </div>
+
+                            <!-- Detailed Mechanical Lock -->
+                            <div class="diary-lock" id="diary-lock" aria-hidden="true">
+                                <svg width="34" height="42" viewBox="0 0 34 42" fill="none">
+                                    <rect x="2" y="14" width="30" height="26" rx="6" fill="#ffd700" stroke="#daa520"
+                                        stroke-width="2" />
+                                    <path d="M9 14V9a8 8 0 0 1 16 0v5" stroke="#ffd700" stroke-width="3"
+                                        stroke-linecap="round" fill="none" />
+                                    <circle cx="17" cy="25" r="4" fill="#351522" />
+                                    <path d="M17 29V34" stroke="#351522" stroke-width="3" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <p class="diary-tap-hint" id="diary-tap-hint">Tap to unlock & open</p>
+                        </div>
+                    </div>
+
+                    <!-- Inside Book Page -->
+                    <div class="diary-face diary-inside">
+                        <div class="diary-pages-stack"></div>
+                        <div class="diary-lines" aria-hidden="true"></div>
+                        <div class="diary-text">
+                            <div class="diary-carousel" id="diary-carousel">
+                                <!-- Single Page -->
+                                <div class="diary-page active" data-page="0">
+                                    <p class="diary-date" id="tanggal">17 AGUSTUS 2026</p>
+
+                                    <h3 class="diary-salute">🎂 HAII! HAPPY BIRTHDAY SHAFIRA!!!</h3>
+
+                                    <div class="diary-handwritten-body" id="diary-handwritten-body">
+                                        <p>Happy birthday SHAFIRA CAHYA NINGTYAS 🥳🥳</p>
+
+                                        <p>Maaf ya, di ulang tahun kali ini mamas belum bisa ngasih apa-apa buat kamu.</p>
+
+                                        <p>Tapi doa terbaik dari mamas pasti selalu mamas kirim buat kamu. Semoga kamu selalu diberikan kesehatan, panjang umur, dan rezeki yang berlimpah.</p>
+
+                                        <p>Semoga setiap urusan kamu selalu diberikan kemudahan, setiap langkah kamu dilancarkan, dan kamu selalu dikelilingi hal-hal baik.</p>
+
+                                        <p>Semoga di umur kamu yang sekarang, semakin banyak kebahagiaan yang datang, semakin banyak hal baik yang kamu dapatkan, dan semoga senyum kamu selalu ada di setiap harinya.</p>
+
+                                        <p>Semogaa kita bisa selalu saling menemani proses satu sama lain yaa.</p>
+                                    </div>
+
+                                    <p class="diary-sign">
+                                        Selamat Ulang Tahun 🥳💙🩶
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="btn-diary-next" class="btn-primary btn--hidden hidden">
+                <span>Our Memories</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </button>
+        </section>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- SECTION 3: INTERACTIVE POLAROID GALLERY    -->
+        <!-- ═══════════════════════════════════════════ -->
+        <section id="section-gallery" class="section" data-index="2">
+            <h2 class="section-title">Our Memories 📸</h2>
+            <p class="section-subtitle">Kamu harus tarik dan lempar :D</p>
+
+            <div class="polaroid-stack-container">
+                <div class="polaroid-stack" id="polaroid-stack">
+                    <!-- Loaded dynamically via JS for touch-swipe interactions -->
+                </div>
+            </div>
+
+            <button id="btn-gallery-next" class="btn-primary">
+                <span>Time for Cake!</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </button>
+        </section>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- SECTION 4: CAKE                            -->
+        <!-- ═══════════════════════════════════════════ -->
+        <section id="section-cake" class="section" data-index="3">
+            <h2 class="section-title" id="cake-title">Time for Cake!</h2>
+            <p class="section-subtitle" id="cake-subtitle">Kuenya versi ini dulu ya. tapi tetep lucu, kan?
+                🍰</p>
+
+            <div class="cake-wrapper">
+                <!-- SVG Birthday Cake with luxury detailing -->
+                <div class="cake-svg-container" id="cake-svg-container">
+                    <svg id="cake-svg" viewBox="0 0 300 280" xmlns="http://www.w3.org/2000/svg"
+                        aria-label="Birthday cake" role="img">
+                        <!-- Plate -->
+                        <ellipse cx="150" cy="255" rx="135" ry="16" fill="#ffd6eb" opacity="0.6" />
+                        <ellipse cx="150" cy="255" rx="120" ry="10" fill="#fff" opacity="0.3" />
+
+                        <!-- Bottom Tier (Ocean Blue Cream Layers) -->
+                        <rect x="30" y="170" width="240" height="80" rx="12" fill="#ff80b3" />
+                        <!-- Cream filling middle bottom -->
+                        <rect x="30" y="210" width="240" height="8" fill="#ffd6eb" opacity="0.9" />
+                        <!-- Cream icing top bottom -->
+                        <rect x="30" y="170" width="240" height="15" rx="5" fill="#ffd6eb" />
+                        <!-- Dots bottom tier -->
+                        <circle cx="70" cy="225" r="5" fill="#fff" opacity="0.8" />
+                        <circle cx="110" cy="235" r="4" fill="#ffeb99" opacity="0.9" />
+                        <circle cx="150" cy="220" r="6" fill="#fff" opacity="0.8" />
+                        <circle cx="190" cy="232" r="5" fill="#ffeb99" opacity="0.9" />
+                        <circle cx="230" cy="225" r="5" fill="#fff" opacity="0.8" />
+
+                        <!-- Bottom frosting drips -->
+                        <path
+                            d="M30 175 C50 195, 60 165, 80 185 C100 205, 120 165, 140 185 C160 205, 180 165, 200 185 C220 205, 240 165, 270 175"
+                            fill="none" stroke="#fff5f8" stroke-width="8" stroke-linecap="round" opacity="0.8" />
+
+                        <!-- Middle Tier -->
+                        <rect x="60" y="105" width="180" height="65" rx="10" fill="#ff4d94" />
+                        <rect x="60" y="132" width="180" height="6" fill="#ff80b3" opacity="0.9" />
+                        <rect x="60" y="105" width="180" height="12" rx="4" fill="#ff80b3" />
+                        <!-- Stars middle tier -->
+                        <text x="85" y="145" font-size="14" fill="#ffeb99" opacity="0.9">✦</text>
+                        <text x="130" y="152" font-size="10" fill="#fff" opacity="0.8">✦</text>
+                        <text x="170" y="140" font-size="16" fill="#ffeb99" opacity="0.9">✦</text>
+                        <text x="210" y="148" font-size="12" fill="#fff" opacity="0.8">✦</text>
+
+                        <!-- Top Tier -->
+                        <rect x="90" y="55" width="120" height="50" rx="8" fill="#ff80b3" />
+                        <rect x="90" y="55" width="120" height="10" rx="3" fill="#ffd6eb" />
+                        <!-- Heart top tier -->
+                        <path
+                            d="M150 82 C150 82 135 70 135 62 C135 57 140 54 145 57 C147 58 149 60 150 62 C151 60 153 58 155 57 C160 54 165 57 165 62 C165 70 150 82 150 82Z"
+                            fill="#ff4d94" />
+
+                        <!-- Candle 1 -->
+                        <rect x="119" y="32" width="10" height="24" rx="4" fill="#ffef9f" />
+                        <ellipse cx="124" cy="26" rx="4.5" ry="7" fill="#ffa726" class="flame" />
+                        <ellipse cx="124" cy="27" rx="2.5" ry="4.5" fill="#ff3d00" class="flame" />
+
+                        <!-- Candle 2 (Center - Glowing Gold) -->
+                        <rect x="145" y="24" width="10" height="32" rx="4" fill="#ffd6eb" />
+                        <ellipse cx="150" cy="18" rx="5" ry="8" fill="#ffd54f" class="flame" id="flame-main" />
+                        <ellipse cx="150" cy="19" rx="3" ry="5.5" fill="#ff6d00" class="flame" />
+
+                        <!-- Candle 3 -->
+                        <rect x="171" y="32" width="10" height="24" rx="4" fill="#ffe6f0" />
+                        <ellipse cx="176" cy="26" rx="4.5" ry="7" fill="#ffa726" class="flame" />
+                        <ellipse cx="176" cy="27" rx="2.5" ry="4.5" fill="#ff3d00" class="flame" />
+
+                        <!-- Cut line overlay -->
+                        <line id="cut-line" x1="150" y1="55" x2="150" y2="250" stroke="#351522" stroke-width="4"
+                            stroke-dasharray="10 6" stroke-linecap="round" opacity="0" />
+
+                        <!-- Slice that slides out -->
+                        <g id="cake-slice" opacity="0">
+                            <!-- Left Slice Offset -->
+                            <path d="M150 55 L210 55 L210 240 L150 240 Z" fill="#ff80b3" opacity="0.1" />
+                        </g>
+                    </svg>
+                    <!-- Custom Glowing Knife Wand -->
+                    <div class="knife-wand" id="knife-wand">✨🔪</div>
+                </div>
+
+                <!-- Drag interaction zone -->
+                <div class="cut-zone" id="cut-zone" role="button" aria-label="Drag to cut the cake" tabindex="0">
+                    <div class="cut-hint" id="cut-hint">
+                        <span>Geser untuk memotong kue!</span>
+                    </div>
+                    <div class="cut-progress-bar" id="cut-progress-bar"></div>
+                </div>
+            </div>
+
+            <button id="btn-cake-next" class="btn-primary btn--hidden">
+                <span>Make a Wish</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </button>
+        </section>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- SECTION 5: WISH                            -->
+        <!-- ═══════════════════════════════════════════ -->
+        <section id="section-wish" class="section" data-index="4">
+            <h2 class="section-title">Floating Wishes</h2>
+            <p class="section-subtitle">Pecahkan gelembung sabun kaca 3D untuk mengabulkan harapanmu! 🫧</p>
+
+            <div class="wish-field" id="wish-field">
+                <div class="wish-bubble" style="--wx:15%;--wy:15%;--dur:5.2s;"
+                    data-msg="Please take good care of yourself. eat well, rest enough, and stay healthy!">
+                    <span class="bubble-spark"></span>
+                    Stay Healthy
+                </div>
+                <div class="wish-bubble" style="--wx:62%;--wy:10%;--dur:4.5s;"
+                    data-msg="Of course, aku selalu jadi salah satu yang pengen selalu ngeliat kamu happy. jadi, senantiasa bahagia, ya? ">
+                    <span class="bubble-spark"></span>
+                    Stay Happy
+                </div>
+                <div class="wish-bubble" style="--wx:32%;--wy:40%;--dur:4.8s;"
+                    data-msg="You have a big dreams, and I believe in you. kamu juga harus percaya, kalo setiap mimpi yang kamu punya, akan selalu ada jalan buat jadi kenyataan! fighting!">
+                    <span class="bubble-spark"></span>
+                    Dream Big
+                </div>
+                <div class="wish-bubble" style="--wx:70%;--wy:45%;--dur:5.5s;"
+                    data-msg="Wishing yoy all the succes in the world. aku selalu bangga sama setiap pencapaian kamu, apa pun.">
+                    <span class="bubble-spark"></span>
+                    Be Successful
+                </div>
+                <div class="wish-bubble" style="--wx:8%;--wy:68%;--dur:6s;"
+                    data-msg="Aku harap, kamu selalu di kelilingi orang-orang yang sayang sama kamu, yang tulus sama kamu. yang bisa kasih kamu rasa hangat, rasa nyaman. dan juga, jadi yang penuh cinta. buat diri kamu sendiri, buat orang-orang di sekitar kamu.">
+                    <span class="bubble-spark"></span>
+                    Always Loved
+                </div>
+                <div class="wish-bubble" style="--wx:65%;--wy:72%;--dur:4s;"
+                    data-msg="Aku enggak akan bosen bilang, kalo aku seneng bertemu kamu. jadi, makasih udah hadir di kehidupan aku, ya?">
+                    <span class="bubble-spark"></span>
+                    Forever Us
+                </div>
+            </div>
+
+            <!-- Glassmorphic Elegant Wish Popup Modal -->
+            <div class="wish-popup" id="wish-popup" aria-live="polite">
+                <div class="wish-popup-inner">
+                    <div class="wish-popup-sparkles">✨💖✨</div>
+                    <p id="wish-popup-text"></p>
+                </div>
+            </div>
+
+            <div class="final-message">Happy Birthday, My Love ♥</div>
+            <p class="forever-text">Forever & Always Yours</p>
+
+            <button id="btn-to-gift" class="btn-primary">
+                <span>Open Your Gift</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </button>
+        </section>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- SECTION 6: GIFT                            -->
+        <!-- ═══════════════════════════════════════════ -->
+        <section id="section-gift" class="section" data-index="5">
+            <h2 class="section-title" id="gift-title">Satu Hal Lagi...</h2>
+
+            <div class="gift-scene">
+                <!-- 3D Luxury Gift Box SVG -->
+                <div class="gift-box-wrap" id="gift-box-wrap" role="button" aria-label="Click to open gift"
+                    tabindex="0">
+                    <div class="gift-tag">For You 🏷️</div>
+                    <svg id="gift-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <!-- Box body (Ocean Blue velvet) -->
+                        <rect x="25" y="85" width="150" height="100" rx="8" fill="#cc246c" stroke="#99144d"
+                            stroke-width="1.5" />
+
+                        <!-- Luxurious Gold ribbon vertical -->
+                        <rect x="88" y="85" width="24" height="100" fill="#ffd700" opacity="0.9" />
+                        <rect x="94" y="85" width="12" height="100" fill="#daa520" opacity="0.7" />
+
+                        <!-- Luxurious Gold ribbon horizontal -->
+                        <rect x="25" y="125" width="150" height="22" fill="#ffd700" opacity="0.9" />
+                        <rect x="25" y="131" width="150" height="10" fill="#daa520" opacity="0.7" />
+
+                        <!-- Elegant Ribbon Bow -->
+                        <path d="M72 83 C55 60, 40 85, 85 85 Z" fill="#ffd700" stroke="#daa520" stroke-width="1" />
+                        <path d="M128 83 C145 60, 160 85, 115 85 Z" fill="#ffd700" stroke="#daa520" stroke-width="1" />
+                        <!-- Bow knots -->
+                        <ellipse cx="100" cy="85" rx="14" ry="11" fill="#fff" opacity="0.3" />
+                        <circle cx="100" cy="85" r="8" fill="#ffd700" />
+
+                        <!-- Lid Group (Flies off on click) -->
+                        <g id="gift-lid-group" class="gift-lid-group">
+                            <rect x="18" y="58" width="164" height="28" rx="5" fill="#ff4d94" stroke="#cc246c"
+                                stroke-width="1.5" />
+                            <rect x="88" y="58" width="24" height="28" fill="#ffd700" opacity="0.9" />
+                        </g>
+
+                        <!-- Sparkle stars on box -->
+                        <text x="48" y="115" font-size="14" fill="#ffd700" opacity="0.8">✦</text>
+                        <text x="145" y="112" font-size="12" fill="#fff" opacity="0.7">✦</text>
+                        <text x="52" y="165" font-size="10" fill="#ffd700" opacity="0.8">✦</text>
+                        <text x="142" y="168" font-size="15" fill="#fff" opacity="0.7">✦</text>
+                    </svg>
+                </div>
+
+                <!-- Revealed Bouquet -->
+                <div id="gift-reveal" class="gift-reveal">
+                    <h3 class="gift-reveal-title">Aku nyaman sama kamu, aku pengen kita punya hubungan yang jelas. </h3>
+                    <div class="bouquet-wrapper" id="reward-frame-tilt">
+                        <img src="assets/bucket.png" alt="Romantic Flower Bouquet" class="bouquet-img">
+                    </div>
+                    <p class="gift-msg-sign">— Will You by my girlfriend? 💍</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Music Toggle (mute/unmute) -->
+    <button id="music-toggle" class="music-toggle" aria-label="Toggle music">🎵</button>
+
+    <!-- Background Music via YouTube IFrame API -->
+    <!-- Ganti nilai data-yt-id dengan Video ID YouTube yang diinginkan -->
+    <div id="yt-music-player"
+         data-yt-id="jy-prhJA-fw"
+         style="position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;bottom:0;left:0;overflow:hidden;">
+        <div id="yt-iframe"></div>
+    </div>
+
+    <!-- YouTube IFrame API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <!-- Scripts -->
+    <script src="js/index.js?v=4.0"></script>
+</body>
+
+</html>
